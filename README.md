@@ -1,12 +1,17 @@
 # AI-Based Online Exam Cheating Detection System (Hybrid ML)
 
+
 ## Overview
 This project presents a **hybrid AI system** to detect cheating in online exams using **behavioral**, **relational (group/collusion)**, **textual**, and **biometric (typing-based)** analysis.
+
+
 
 Online exams lack physical supervision, so cheating becomes easier. Traditional proctoring or single-model detectors often fail to catch:
 - **Group cheating / collusion**
 - **AI-generated or copied answers**
 - **Identity fraud / impersonation**
+
+
 
 This system combines multiple algorithms—each specialized for a cheating dimension—so the final detection is more **robust** and **multi-layered**.
 
@@ -22,6 +27,8 @@ Isolation Forest is effective for **unsupervised anomaly detection** when labels
 - tab_switches
 - typing_speed
 - idle_time
+
+  
 
 ### 2) Graph-Based Model (Collusion / Group Cheating – GNN Concept)
 Students involved in collusion often show **similar behavior patterns**.  
@@ -43,11 +50,15 @@ We encode answers using a transformer embedding model (e.g., SentenceTransformer
 A VAE-style reconstruction approach can flag **unseen cheating patterns** not captured by standard rules.
 If reconstruction error is high, the sample may be abnormal.
 
+
+
 > Note: This repo demonstrates the concept. A complete VAE typically includes mean/variance sampling + KL divergence loss.
 
 ### 5) Keystroke Dynamics (Identity Verification)
 Typing behavior can act like a biometric signature.  
 Large deviation in typing dynamics can indicate **impersonation**.
+
+
 
 > In this prototype, typing variance is simulated. Real deployment requires genuine keystroke timing features.
 
